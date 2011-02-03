@@ -1,0 +1,161 @@
+/* $Id: theme-settings.css,v 1.1 2009/03/25 22:43:34 rhache Exp $ */
+
+/**
+* CSS file for theme configuration page.
+*/
+
+/**
+* LAYOUTS
+*/
+
+/**
+* Choose Layouts
+*/
+fieldset label,
+.layouts.form-radios {
+	clear: both;
+}
+
+.layouts > div.form-item {	
+	display: -moz-inline-stack; /* For FF 2 */
+	display: inline-block;
+	margin: 0 1.5em 1em 0;
+	vertical-align: top;
+	width: 132px;
+}
+
+.layouts div img {
+	border: 1px solid #000;
+}
+
+.layouts p {
+	font-size: 11px;
+	line-height: 1.3;
+	margin: 0.25em 0 0;
+}
+
+/**
+* Layout Examples Color Reference
+*/
+.color-reference {
+	margin: .25em 0 .5em 0 !important;
+	overflow: hidden;
+	padding: 0;
+}
+
+.color-reference li {
+	border: 1px solid #A9A9A9;
+	color: #FFF;
+	float: left;
+	font-weight: bold;
+	list-style: none;
+	margin: 0 1em 0 0;
+	padding: 3px 5px;
+	text-align: center;
+	width: 80px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+.color-reference li.primary-region {
+	color: #000;
+}
+
+.primary-region {
+	background: #F3F3F3;
+}
+
+.secondary-region {
+	background: #898989;
+}
+
+.tertiary-region {
+	background: #BCBCBC;
+}
+
+/**
+* Layout Examples
+*/
+.layouts .layout-example {
+	border: 1px solid #A9A9A9;
+	overflow: hidden;
+	padding: 2px;
+	width: 130px;
+}
+
+.layouts .layout-example div {
+	float: left;
+	height: 100px;
+}
+
+.layouts .layout-example .primary-region {
+	color: #A9A9A9;
+	font-size: 36px;
+	line-height: 45px;
+	text-align: center;
+	width: 70px;
+}
+
+.layouts .layout-example .secondary-region {
+	width: 35px;
+}
+
+.layouts .layout-example .tertiary-region {
+	width: 25px;
+}
+
+.layouts .layout-7 .primary-region,
+.layouts .layout-8 .primary-region,
+.layouts .layout-8 .secondary-region,
+.layouts .layout-8 .tertiary-region {
+	float: none;
+	width: auto;
+}
+
+.layouts .layout-7 .primary-region {
+	height: 70px;
+}
+
+.layouts .layout-7 .secondary-region,
+.layouts .layout-7 .tertiary-region {
+	height: 30px;
+}
+
+.layouts .layout-7 .secondary-region {
+	width: 50%;
+}
+
+.layouts .layout-7 .tertiary-region {
+	width: 49.9%;
+}
+
+.layouts .layout-8 .primary-region {
+	height: 55px;
+}
+
+.layouts .layout-8 .secondary-region {
+	height: 25px;
+}
+
+.layouts .layout-8 .tertiary-region {
+	height: 20px;
+}
+
+
+/**
+* LAYOUT DIMENTSIONS
+*/
+#edit-layoutstudio-dimensions fieldset-wrapper {
+	overflow: hidden;
+}
+
+#edit-layoutstudio-dimensions .form-item {
+	float: left;
+	margin-right: 1.5em;
+	width: 200px;
+}
+
+#edit-layoutstudio-dimensions .form-item .form-text {
+	width: 30px;
+}

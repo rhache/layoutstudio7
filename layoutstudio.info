@@ -1,0 +1,51 @@
+; $Id:
+
+name = layoutstudio
+description = Ultimate starter theme for Drupal. Read INSTALL.txt in MYTHEME directory for installation instructions
+core = 7.x
+engine = phptemplate
+screenshot = screenshot.png
+
+; Default Regions
+regions[page_top] = Page top
+regions[header] = Header
+regions[preface_first] = Preface First
+regions[preface] = Preface Middle
+regions[preface_last] = Preface Last
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Primary
+regions[secondary_first] = Secondary First
+regions[secondary] = Secondary Middle
+regions[secondary_last] = Secondary Last
+regions[tertiary_first] = Tertiary First
+regions[tertiary] = Tertiary Middle
+regions[tertiary_last] = Tertiary Last
+regions[postscript_first] = Postscript First
+regions[postscript] = Postscript Middle
+regions[postscript_last] = Postscript Last
+regions[navigation] = Navigation
+regions[footer] = Footer
+regions[page_bottom] = Page bottom
+
+; Stylesheets
+;		For various reasons, it is recommended that you add 
+;		your stylesheets via the theme's template.php file.
+
+; Features
+features[] = name
+
+; Set the default settings to be used in theme-settings.php
+settings[layoutstudio_random_class]		= 0
+settings[layoutstudio_layout]					= 'layout1'
+settings[layoutstudio_page_width]      = '960'
+settings[layoutstudio_secondary_width] = '150'
+settings[layoutstudio_tertiary_width]  = '150'
+settings[layoutstudio_header_width]		= '0'
+settings[layoutstudio_footer_width]		= '0'
+; Information added by drupal.org packaging script on January 1, 1970 - 00:00
+version = "7.x-1.7"
+core = "7.x"
+project = "layoutstudio"
+datestamp = "1296453108"
+

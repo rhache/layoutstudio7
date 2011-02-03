@@ -1,0 +1,55 @@
+; $Id:
+
+name = MYTHEME
+description =  Based on LayoutStudio starter theme
+core = 7.x
+engine = phptemplate
+screenshot = screenshot.png
+base theme = layoutstudio
+
+; Default Regions
+regions[page_top] = Page top
+regions[header] = Header
+regions[preface_first] = Preface First
+regions[preface] = Preface Middle
+regions[preface_last] = Preface Last
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Primary
+regions[secondary_first] = Secondary First
+regions[secondary] = Secondary Middle
+regions[secondary_last] = Secondary Last
+regions[tertiary_first] = Tertiary First
+regions[tertiary] = Tertiary Middle
+regions[tertiary_last] = Tertiary Last
+regions[postscript_first] = Postscript First
+regions[postscript] = Postscript Middle
+regions[postscript_last] = Postscript Last
+regions[navigation] = Navigation
+regions[footer] = Footer
+regions[page_bottom] = Page bottom
+
+; Stylesheets
+;		For various reasons, it is recommended that you add 
+;		your stylesheets via the theme's template.php file.
+
+; Features
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; Default settings for features
+settings[toggle_logo] = 0
+settings[toggle_main_menu] = 0
+settings[toggle_secondary_menu] = 0
+; Information added by drupal.org packaging script on January 1, 1970 - 00:00
+version = "7.x-1.7"
+core = "7.x"
+project = "layoutstudio"
+datestamp = "1296453108"
+

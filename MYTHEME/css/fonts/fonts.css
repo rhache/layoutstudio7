@@ -1,0 +1,18 @@
+/* $Id:  */
+
+/*
+* @FONT-FACE STYLESHEETS
+*
+* Recommended steps
+*
+* 1- Enable this stylesheet in theme's template.php file and clear site cache
+* 2- Find the desired fonts you would like to use. Make sure they are 
+*    legally eligible for web embedding. A couple of good sources:
+*       - http://www.fontsquirrel.com
+*       - http://www.fontex.org
+* 3- Use the @font-face generator at http://www.fontsquirrel.com/fontface/generator
+* 4- Once you download the package, put all the fonts in this directory.
+* 5- Copy the content of stylesheets.css in this stylesheet.
+* 6- You can now use the custom fonts with the font-family property in any of your theme's stylesheet.
+*
+*/
