@@ -52,4 +52,11 @@ Features list can be found in the LayoutStudio theme README.txt.
   			- css/screen.css (for screen or projection media types)
   			- css/print.css (for print media type) - disabled by default
   			- css/fonts/fonts.css (for adding @font-face fonts) - 
+  			- css/mobile.css (for adding mobile specific layout settings) - 
   			  disabled by default
+
+
+-- Extra Special Bits --
+
+	1. Download and install the skinr module. You won't regret it
+	2. Use .less css preprocessor files: MYTHEME/css/less

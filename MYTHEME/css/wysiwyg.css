@@ -11,5 +11,4 @@
 * - add rules below to match your theme.
 */
 @import 'default.css';
-@import 'typography.css';
 @import 'screen.css';

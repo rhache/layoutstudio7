@@ -5,7 +5,13 @@
  * CSS Reset and default styling
  */
 drupal_add_css(drupal_get_path('theme', 'layoutstudio') . '/css/defaults.css', array('weight' => CSS_THEME, 'type' => 'file'));
-drupal_add_css(drupal_get_path('theme', 'WORKING_COPY') . '/css/defaults_ie.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE), 'preprocess' => FALSE));
+drupal_add_css(drupal_get_path('theme', 'layoutstudio') . '/css/960.css', array('weight' => CSS_THEME, 'type' => 'file'));
+
+/**
+ * MODERNIZR Support
+ **/
+
+drupal_add_js(drupal_get_path('theme', 'layoutstudio') . "/scripts/modernizr-1.6.min.js", 'file');
 
 function layoutstudio_preprocess_html(&$variables) {  
   // Set up layout variable.
@@ -100,6 +106,10 @@ function layoutstudio_preprocess_page(&$variables) {
 
   // Add layout specific CSS to the page.
   layoutstudio_add_layout_css($variables);
+  
+  // Add head meta tags
+  layoutstudio_add_meta_head($variables);
+  
 }
 
 /**
@@ -424,4 +434,19 @@ function layoutstudio_theme_get_setting($setting_name) {
 
   // Load the setting the normal way if LayoutStudio Extras is not installed.
   return theme_get_setting($setting_name);
+}
+
+/**
+ * Add default meta tags to head document
+ **/
+function layoutstudio_add_meta_head(&$variables) {
+  $data = array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'http-equiv' => "X-UA-Compatible",
+      'content' => "IE=edge,chrome=1",
+      )
+    );
+  
+  drupal_add_html_head($data,'layoutstudio');
 }

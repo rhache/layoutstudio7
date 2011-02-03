@@ -43,9 +43,3 @@ settings[layoutstudio_secondary_width] = '150'
 settings[layoutstudio_tertiary_width]  = '150'
 settings[layoutstudio_header_width]		= '0'
 settings[layoutstudio_footer_width]		= '0'
-; Information added by drupal.org packaging script on January 1, 1970 - 00:00
-version = "7.x-1.7"
-core = "7.x"
-project = "layoutstudio"
-datestamp = "1296453108"
-

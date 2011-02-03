@@ -13,7 +13,6 @@ function layoutstudio_form_system_theme_settings_alter(&$form, &$form_state) {
 
 	// Add the form's CSS
   drupal_add_css(drupal_get_path('theme', 'layoutstudio') . '/css/theme-settings.css', 'file');
-  drupal_add_css(drupal_get_path('theme', 'layoutstudio') . '/css/theme-settings-ie.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 7', '!IE' => FALSE), 'preprocess' => FALSE));
 
   // Create the form widgets using Forms API
   $form['layoutstudio_random_class'] = array(

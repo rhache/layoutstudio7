@@ -83,26 +83,19 @@
  */
 ?>
 
-<div class="skip-to-links">
-	<p>
-		<?php print t('Skip to: ') ?>
-		<span class="skip-to-content">
-			<a href="#content-area" title="<?php print t('Go to site content') ?>">content</a>
-		</span>
+<section id="skip-links" role="navigation">
+			<a href="#content-area" title="<?php print t('Go to site content') ?>"><?php print t('Skip to content'); ?></a>
     <?php if ($page['navigation'] OR $main_menu OR $secondary_menu): ?>
     &ndash;
-    <span class="skip-to-nav">
-      <a href="#nav" title="' . t('Go to site navigation') . '">navigation</a>
-    </span>
+      <a href="#nav" title="' . t('Go to site navigation') . '"><?php print t('Skip to navigation'); ?></a>
     <?php endif; ?>
-	</p>
-</div>
+</section>
 
 <div id="page">
 
-	<div id="header" class="clearfix">
+	<header id="header" role="banner" class="clearfix">
 		<div class="inside">
-			
+
 			<?php if ($logo): //Remember to enable the logo in your theme's info file ?>
 				<?php if ($is_front): ?>
 	        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -132,18 +125,18 @@
 			<?php print render($page['header']); ?>
 		
 		</div><!-- CLASS inside -->
-	</div><!-- ID header -->
+	</header><!-- ID header -->
 
 	<div id="container" class="clearfix">
-
+					
 		<div id="breadcrumb"><?php if ($breadcrumb): print $breadcrumb; endif; ?></div>
 
 		<?php if ($page['preface_first'] OR $page['preface'] OR $page['preface_last']): ?>
-			<div id="preface">
+			<aside id="preface" class="clearfix" role="complimentary">
       	<?php print render($page['preface_first']); ?>
       	<?php print render($page['preface']); ?>
       	<?php print render($page['preface_last']); ?>
-			</div><!-- ID preface -->
+			</aside><!-- ID preface -->
 		<?php endif; ?>
 	
 		<div id="wrapper">
@@ -155,65 +148,69 @@
 			    <?php print render($page['highlighted']); ?>
 					<?php print render($page['help']); ?>
 			    <?php print $messages; ?>
+			    
+			    <section id="main-content" role="main">				    
+			    	<header>
+				      <?php print render($title_prefix); ?>
+				      <?php if ($title): ?>
+				        <h1 class="title" id="page-title">
+				          <?php print $title; ?>
+				        </h1>
+				      <?php endif; ?>
+				      <?php print render($title_suffix); ?>
+	
+				      <?php if ($tabs): ?>
+				        <div class="tabs">
+				          <?php print render($tabs); ?>
+				        </div>
+				      <?php endif; ?>
+				      
+				      <?php if ($action_links): ?>
+				        <ul class="action-links">
+				          <?php print render($action_links); ?>
+				        </ul>
+				      <?php endif; ?>
+			    	</header>
+
+			      <?php print render($page['content']); ?>
+
+			      <?php print $feed_icons; ?>
+			    </section>
 			          			
-		      <?php print render($title_prefix); ?>
-		      <?php if ($title): ?>
-		        <h1 class="title" id="page-title">
-		          <?php print $title; ?>
-		        </h1>
-		      <?php endif; ?>
-		      <?php print render($title_suffix); ?>
-
-		      <?php if ($tabs): ?>
-		        <div class="tabs">
-		          <?php print render($tabs); ?>
-		        </div>
-		      <?php endif; ?>
-		      
-		      <?php if ($action_links): ?>
-		        <ul class="action-links">
-		          <?php print render($action_links); ?>
-		        </ul>
-		      <?php endif; ?>
-
-		      <?php print render($page['content']); ?>
-
-		      <?php print $feed_icons; ?>			
 
 	      </div><!-- CLASS inside -->
 			</div><!-- ID primary -->
 		</div><!-- ID wrapper -->
 		
 		<?php if ($page['secondary_first'] OR $page['secondary'] OR $page['secondary_last']): ?>
-			<div id="secondary">
-		    <?php print render($page['secondary_first']); ?>
+			<aside id="secondary" role="complimentary">
+      	<?php print render($page['secondary_first']); ?>
       	<?php print render($page['secondary']); ?>
       	<?php print render($page['secondary_last']); ?>
-			</div><!-- ID secondary -->
+			</aside><!-- ID secondary -->
 		<?php endif; ?>
 	
 		<?php if ($page['tertiary_first'] OR $page['tertiary'] OR $page['tertiary_last']): ?>
-			<div id="tertiary">
+			<aside id="tertiary" role="complimentary">
       	<?php print render($page['tertiary_first']); ?>
       	<?php print render($page['tertiary']); ?>
       	<?php print render($page['tertiary_last']); ?>
-			</div><!-- ID tertiary -->
+			</aside><!-- ID tertiary -->
 		<?php endif; ?>
 
 		<?php if ($page['postscript_first'] OR $page['postscript'] OR $page['postscript_last']): ?>
-			<div id="postscript">
+			<aside id="postscript" role="complimentary">
       	<?php print render($page['postscript_first']); ?>
       	<?php print render($page['postscript']); ?>
       	<?php print render($page['postscript_last']); ?>
-			</div><!-- ID postscript -->
+			</aside><!-- ID postscript -->
 		<?php endif; ?>
 		
 		<?php if ($page['navigation'] OR $main_menu OR $secondary_menu): ?>
-			<div id="navigation">
+			<section id="navigation" role="navigation">
 				<a id="nav"></a>
-				
 				<?php if ($main_menu): //Remember to turn menu option on in your theme's info file ?>
-		      <div id="main-menu" class="navigation">
+		      <nav id="main-menu" class="navigation">
 		        <?php print theme('links__system_main_menu', array(
 		          'links' => $main_menu,
 		          'attributes' => array(
@@ -226,11 +223,11 @@
 		            'class' => array('element-invisible'),
 		          ),
 		        )); ?>
-		      </div> <!-- ID main-menu -->
+		      </nav> <!-- ID main-menu -->
 		    <?php endif; ?>
 		
 		    <?php if ($secondary_menu): //Remember to turn menu option on in your theme's info file ?>
-		      <div id="secondary-menu" class="navigation">
+		      <nav id="secondary-menu" class="navigation">
 		        <?php print theme('links__system_secondary_menu', array(
 		          'links' => $secondary_menu,
 		          'attributes' => array(
@@ -243,19 +240,19 @@
 		            'class' => array('element-invisible'),
 		          ),
 		        )); ?>
-		      </div> <!-- ID secondary-menu -->
+		      </nav> <!-- ID secondary-menu -->
 		    <?php endif; ?>
 
 				<?php print render($page['navigation']); ?>
-			</div><!-- ID navigation -->
+			</section><!-- ID navigation -->
 		<?php endif; ?>
 
 	</div><!-- ID container -->
 
-	<div id="footer" class="clearfix">
+	<footer id="footer" role="contentinfo" class="region region-footer clearfix">
 		<div class="inside">
 			<?php print render($page['footer']); ?>
 		</div>
-	</div><!-- ID footer -->
+	</footer><!-- ID footer -->
 	
 </div><!-- ID page -->
