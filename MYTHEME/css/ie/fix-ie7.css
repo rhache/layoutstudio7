@@ -1,0 +1,12 @@
+/* $Id: */
+
+/**
+* FIX IE 7 BUGS
+*/
+
+/*
+** Markup free clearing
+** Details: http://www.positioniseverything.net/easyclearing.html
+*/
+*:first-child+html .clearfix,
+*:first-child+html .clear-block { zoom: 1; } /* IE7 */

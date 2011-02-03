@@ -1,0 +1,17 @@
+/* $Id: */
+
+/**
+* ALL MEDIA STYLESHEET
+*
+* This file is meant for CSS rules that need to work in all media. 
+* Consider making changes to the in a more specific stylesheets instead:
+* 
+* 	- screen.css for screen and projection media type
+* 	- print.css for print media type
+* 
+* This stylesheet is ideal if you would like to make a small override
+* to the default.css.
+* 
+* Please note that this stylesheet is DISABLED BY DEFAULT. You can
+* enable it in your theme's info file.
+*/

@@ -1,0 +1,82 @@
+/* $Id: */
+
+/**
+* SCREEN & PROJECTION MEDIA STYLESHEET
+*/
+
+/**
+* GENERIC GLOBAL STYLES
+*
+* Please be very careful adding anything in this area. Consider 
+* using a more region specific CSS selector instead. 
+*/
+#page,
+#container {
+	margin: 0 auto;
+	position: relative;
+}
+
+.skip-to-links {
+	left: -8000px;
+	position: absolute;
+}
+
+
+/**
+* HEADER REGION
+*/
+#header p.site-name,
+#header p.site-slogan {
+	margin: 0;
+}
+
+/**
+* PREFACE REGION
+*/
+
+
+/**
+* PRIMARY REGION
+*/
+#primary > .inside {
+	margin: 0 1.6em;
+}
+
+
+/**
+* COMMON SECONDARY & TERTIARY STYLES
+*
+* Do NOT add margins, padding or borders CSS properties directly 
+* to the secondary or tertiary divs since this will break the layout. 
+* Instead, consider adding those properties to the regions divs. 
+*/
+
+
+/**
+* SECONDARY REGION
+*/
+
+
+/**
+* TERTIARY REGION
+*/
+
+
+/**
+* POSTSCRIPT REGION
+*/
+
+
+/**
+* NAVIGATION REGION
+*/
+
+
+/**
+* FOOTER REGION
+*/
+
+
+/**
+* CLOSURE REGION
+*/

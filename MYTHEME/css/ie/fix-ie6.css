@@ -1,0 +1,19 @@
+/* $Id: */
+
+/**
+* FIX IE 6 BUGS
+*/
+
+/*
+** Markup free clearing
+** Details: http://www.positioniseverything.net/easyclearing.html
+*/
+* html .clearfix,
+* html .clearblock { zoom: 1; }
+
+/**
+* PRIMARY REGION
+*/
+#primary .inside {
+	margin: 0 1.6em;
+}

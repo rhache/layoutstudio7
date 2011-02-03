@@ -1,0 +1,55 @@
+//$Id:
+
+-- Initial Theme Setup Instructions --
+
+Features list can be found in the LayoutStudio theme README.txt.
+
+  1.  Download Layout Studio from http://drupal.org/project/layoutstudio
+  
+  2.  Unpack the downloaded file, take the entire layoutstudio folder
+      and place it in your Drupal installation under one of the following 
+      locations:
+      
+        - sites/all/themes: making it available to the default Drupal site and 
+          to all Drupal sites in a multi-site configuration
+        - sites/default/themes: making it available to only the default Drupal site
+        - sites/mydomain.com/themes: making it available to only the example.com 
+          site if there is a sites/yourdomain.com/settings.php configuration file
+  
+  3.  Make a copy of the MYTHEME folder in your themes folder. 
+
+  4.  In the template.php, theme-settings.php and MYTHEME.info files, 
+      replace all instances of MYTHEME with the name of your theme/project. 
+      Make sure you use a lowercase name with no spaces (underscores are valid).
+    
+      For example, change all instances of "MYTHEME" to "my_client". 
+
+  5.  Change the name of the theme folder to the same theme/project name.
+    
+      For example, rename MYTHEME folder to "my_client".
+
+  6.  Rename "MYTHEME.info" to the name of your theme/project.
+    
+      For example, rename "MYTHEME.info" to"my_client.info".
+
+  7.  Upload layoutstudio and your new theme folders to the remote server.
+
+  8.  Enable your theme
+
+  9.  Configure your theme
+
+      Go to your theme's site configuration page for further options. Other than 
+      the typical Drupal core options, you also have the following fields available:
+     
+        - Random class: requires a number higher than 1.
+        - Choose default layout
+        - Specify layout dimensions
+
+  10. Get to work! Most CSS work is performed in the following stylesheets in your 
+  		theme's CSS folder:
+  			
+  			- css/all.css (for all media types) - disabled by default
+  			- css/screen.css (for screen or projection media types)
+  			- css/print.css (for print media type) - disabled by default
+  			- css/fonts/fonts.css (for adding @font-face fonts) - 
+  			  disabled by default
