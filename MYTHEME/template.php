@@ -38,8 +38,7 @@ drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/mobile.css', array('w
 
 /* LESS STYLES */
 /*  
-  Beware.. LESS php preprocessor module is not behaving as expected. I would recommend that you compile to a less.css file
-  using something else then the less module and include it using a regular .css file.  
+  Beware.. LESS php preprocessor module is not behaving as expected. I would recommend that you compile to a less.css file using something else then the less.module and include it using a regular .css file.  
 */
 
 /* Uncomment to enable. Make sure you have installed and enabled the LESS module */
