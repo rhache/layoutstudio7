@@ -24,13 +24,6 @@
 drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/screen.css', array('weight' => CSS_THEME, 'media' => 'screen, projection', 'type' => 'file'));
 //drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/print.css', array('weight' => CSS_THEME, 'media' => 'print', 'type' => 'file'));
 
-/**
- * IE Conditional Stylesheets
- */
-drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/ie/fix-ie6.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'IE 6', '!IE' => FALSE), 'preprocess' => FALSE));
-drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/ie/fix-ie7.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'IE 7', '!IE' => FALSE), 'preprocess' => FALSE));
-//drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/ie/fix-ie8.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'IE 8', '!IE' => FALSE), 'preprocess' => FALSE));
-
 
 /**
  * Override or insert variables into all templates.
