@@ -4,25 +4,52 @@
 /**
  * DEFAULTS CSS
  * Uncommenting the following lines will override the defaults.css
- * and defaults_ie.css in the LayoutStudio base theme, allowing you
+ * in the LayoutStudio base theme, allowing you
  * to user your own defaults/reset, or to simply remove them.
- * Make sure you add a defaults.css and defaults_ie.css in your theme,
+ * Make sure you add a defaults.css in your theme,
  * even if it's an empty file.
  */
 //drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/defaults.css', array('weight' => CSS_THEME, 'type' => 'file'));
-//drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/defaults_ie.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE), 'preprocess' => FALSE));
 
-/**
- * Dedicated file to add @font-face
- */
-//drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/fonts/fonts.css', array('weight' => CSS_THEME, 'type' => 'file'));
 
 /**
  * Main Stylesheets
  */
+
+
+/**
+ * Dedicated file to add @font-face
+ */
+//drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/fonts/fonts.css', array('weight' => CSS_THEME, 'type' => 'file')); 
+
+ 
+/* SCREEN */
 //drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/all.css', array('weight' => CSS_THEME, 'type' => 'file'));
 drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/screen.css', array('weight' => CSS_THEME, 'media' => 'screen, projection', 'type' => 'file'));
+
+/* MOBILE */
+drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/mobile.css', array('weight' => CSS_THEME, 'media' => 'screen, projection', 'type' => 'file'));
+
+
+/* PRINT */
+
 //drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/print.css', array('weight' => CSS_THEME, 'media' => 'print', 'type' => 'file'));
+
+
+/* LESS STYLES */
+/*  
+  Beware.. LESS php preprocessor module is not behaving as expected. I would recommend that you compile to a less.css file
+  using something else then the less module and include it using a regular .css file.  
+*/
+
+/* Uncomment to enable. Make sure you have installed and enabled the LESS module */
+//drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/less/MYTHEME.css.less', array('weight' => CSS_THEME, 'media' => 'screen, projection', 'type' => 'file'));
+
+/* IF you precompile your less files */
+/* drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/less/less.css', array('weight' => CSS_THEME, 'media' => 'screen, projection', 'type' => 'file')); */
+
+
+
 
 
 /**

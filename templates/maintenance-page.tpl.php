@@ -11,9 +11,8 @@
  * @see template_preprocess_maintenance_page()
  * @see layoutstudio_process_maintenance_page()
  */
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
-  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
+?> <!DOCTYPE html>
+ <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?> class="no-js">
 
 <head>
   <?php print $head; ?>
@@ -25,7 +24,7 @@
 	
 	<div id="page">
 
-		<div id="header" class="region clearfix">
+		<header id="header" class="region clearfix">
 
 			<?php if ($site_name): ?>
 				<p class="site-name">
@@ -45,7 +44,7 @@
 
 			<?php print render($page['header']); ?>
 
-		</div><!-- ID header -->
+		</header><!-- ID header -->
 
 		<div id="container" class="clearfix">
 							
@@ -57,8 +56,11 @@
 	
 							<a id="content-area"></a>
 
-							<?php print render($page['help']); ?>
-					   	<?php print $messages; ?>
+				      <?php if ($messages): ?>
+				      	<section id="help" class="region help-region clearfix">
+					      	<?php print $messages; ?>
+					      </section><!-- ID help -->
+					    <?php endif; ?>
 
 				      <?php if ($title): ?>
 				        <h1 class="title" id="page-title">

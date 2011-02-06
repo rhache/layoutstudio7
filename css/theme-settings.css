@@ -159,3 +159,12 @@ fieldset label,
 #edit-layoutstudio-dimensions .form-item .form-text {
 	width: 30px;
 }
+
+
+/** IE FIXES **/
+
+.ie6 .layouts > div.form-item,
+.ie7 .layouts > div.form-item {	
+	zoom: 1; /* For IE 6/7 conditional stylesheet */
+	*display: inline; /* For IE 6/7 conditional stylesheet */
+}

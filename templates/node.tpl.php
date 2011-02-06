@@ -84,21 +84,22 @@ hide($content['comments']);
 hide($content['links']);
 
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes . ' '; ?>"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes . ' '; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>>
-      <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
-    </h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <?php if ($display_submitted): ?>
-			<p class="submitted"><?php print $user_picture ?><?php print $submitted ?></p>
-  <?php endif; ?>
+	<header>
+	  <?php print render($title_prefix); ?>
+	  <?php if (!$page): ?>
+	    <h2<?php print $title_attributes; ?>>
+	      <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
+	    </h2>
+	  <?php endif; ?>
+	  <?php print render($title_suffix); ?>
+	
+	  <?php if ($display_submitted): ?>
+				<p class="submitted"><?php print $user_picture ?><?php print $submitted ?></p>
+	  <?php endif; ?>
+	</header>
   
-
   <?php if ($teaser): //Teaser Template ?>
 
 		<div class="content content-teaser clearfix"<?php print $content_attributes; ?>>
@@ -113,7 +114,6 @@ hide($content['links']);
 
   <?php endif; ?>
   
-  
   <?php
     // Remove the "Add new comment" link on the teaser page or if the comment
     // form is being displayed on the same page.
@@ -124,11 +124,11 @@ hide($content['links']);
     $links = render($content['links']);
     if ($links):
   ?>
-    <div class="link-wrapper">
+    <footer class="link-wrapper">
       <?php print $links; ?>
-    </div>
+    </footer>
   <?php endif; ?> 
   
   <?php print render($content['comments']); ?>
   
-</div>
+</article>

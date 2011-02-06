@@ -47,9 +47,6 @@ features[] = secondary_menu
 settings[toggle_logo] = 0
 settings[toggle_main_menu] = 0
 settings[toggle_secondary_menu] = 0
-; Information added by drupal.org packaging script on January 1, 1970 - 00:00
-version = "7.x-1.7"
-core = "7.x"
-project = "layoutstudio"
-datestamp = "1296453108"
 
+; Skinr 960.gs inherited from Layout Studio Base
+skinr[options][inherit_skins] = true

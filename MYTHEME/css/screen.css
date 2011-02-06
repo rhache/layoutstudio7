@@ -1,8 +1,7 @@
-/* $Id: */
-
 /**
 * SCREEN & PROJECTION MEDIA STYLESHEET
 */
+
 
 /**
 * GENERIC GLOBAL STYLES
@@ -15,12 +14,6 @@
 	margin: 0 auto;
 	position: relative;
 }
-
-.skip-to-links {
-	left: -8000px;
-	position: absolute;
-}
-
 
 /**
 * HEADER REGION
