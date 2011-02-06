@@ -13,6 +13,7 @@ function layoutstudio_form_system_theme_settings_alter(&$form, &$form_state) {
 
 	// Add the form's CSS
   drupal_add_css(drupal_get_path('theme', 'layoutstudio') . '/css/theme-settings.css', 'file');
+	drupal_add_js(drupal_get_path('module','layoutstudio') . "/js/theme_settings.js");
 
   // Create the form widgets using Forms API
   $form['layoutstudio_random_class'] = array(
@@ -134,35 +135,66 @@ function layoutstudio_layout_settings_form($form, &$form_state, $theme_key) {
     '#default_value' => theme_get_setting('layoutstudio_footer_width', $theme_key),
   );
 
-  drupal_add_js(
-    "
-    (function ($) {
-      Drupal.behaviors.layoutstudioThemeSettings = {
-        attach : function(context, settings) {
-          $('input[name=layoutstudio_layout]').change(function() {
-            if ($(this).attr('checked')) {
-              var layout = $(this).attr('value');
 
-              if (layout == 'layout7') {
-                $('.form-item-layoutstudio-secondary-width').show();
-                $('.form-item-layoutstudio-tertiary-width').hide();
-              }
-              else if (layout == 'layout8') {
-                $('.form-item-layoutstudio-secondary-width').hide();
-                $('.form-item-layoutstudio-tertiary-width').hide();
-              }
-              else {
-                $('.form-item-layoutstudio-secondary-width').show();
-                $('.form-item-layoutstudio-tertiary-width').show();
-              }
-            }
-          });
-        }
-      }
-    })(jQuery);
-    ",
-    "inline"
+	$form['layoutstudio_breadcrumb'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Breadcrumb Settings'),
+    '#description' => t('<p>Enable / Disable and choose what region to display it in.</p>'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
   );
+
+	$form['layoutstudio_breadcrumb']['layoutstudio_enable_breadcrumb'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Enable Breadcrumb'),
+  '#default_value' => is_null(theme_get_setting('layoutstudio_enable_breadcrumb')) ? 1 : theme_get_setting('layoutstudio_enable_breadcrumb'),
+	);
+
+// Need new idea to make this work.
+
+// $regions = 	array(
+// 	'page_top' => t('Page top'),
+// 	'header' => t('Header'),
+// 	'preface_first' => t('Preface First'),
+// 	'preface' => t('Preface Middle'),
+// 	'preface_last' => t('Preface Last'),
+// 	'highlighted' => t('Highlighted'),
+// 	'help' => t('Help'),
+// 	'content' => t('Primary'),
+// 	'secondary_first' => t('Secondary First'),
+// 	'secondary' => t('Secondary Middle'),
+// 	'secondary_last' => t('Secondary Last'),
+// 	'tertiary_first' => t('Tertiary First'),
+// 	'tertiary' => t('Tertiary Middle'),
+// 	'tertiary_last' => t('Tertiary Last'),
+// 	'postscript_first' => t('Postscript First'),
+// 	'postscript' => t('Postscript Middle'),
+// 	'postscript_last' => t('Postscript Last'),
+// 	'navigation' => t('Navigation'),
+// 	'footer' => t('Footer'),
+// 	'page_bottom' => t('Page bottom'),
+// );
+// 
+// 
+// 	$form['layoutstudio_breadcrumb']['layoutstudio_breadcrumb_region'] = array(
+// 		'#type' => 'select',
+// 	  '#title' => t('Region to display breadcrumb in'),
+// 	  '#multiple' => FALSE,
+// 	  '#description' => t('Select a region'),
+// 	  '#options' => $regions,
+// 	  '#default_value' => theme_get_setting('layoutstudio_breadcrumb_region'),
+// 	);
+// 
+// 	$form['layoutstudio_breadcrumb']['layoutstudio_breadcrumb_region_placement'] = array(
+// 		'#type' => 'select',
+// 		'#title' => t('Postion in region to put breadcrumb'),
+// 		'#multiple' => FALSE,
+// 		'#description' => t('Top or bottom of the region'),
+// 		'#options' => array('top'=>'Top','bottom' => 'Bottom'),
+// 		'#default_value' => theme_get_setting('layoutstudio_breadcrumb_region_placement'),
+// 	);
+
+
 
   return $form;
 }

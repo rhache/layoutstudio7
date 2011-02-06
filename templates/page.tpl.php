@@ -86,7 +86,6 @@
 <section id="skip-links" role="navigation">
 			<a href="#content-area" title="<?php print t('Go to site content') ?>"><?php print t('Skip to content'); ?></a>
     <?php if ($page['navigation'] OR $main_menu OR $secondary_menu): ?>
-    &ndash;
       <a href="#nav" title="' . t('Go to site navigation') . '"><?php print t('Skip to navigation'); ?></a>
     <?php endif; ?>
 </section>
@@ -129,7 +128,7 @@
 
 	<div id="container" class="clearfix">
 					
-		<div id="breadcrumb"><?php if ($breadcrumb): print $breadcrumb; endif; ?></div>
+	<?php if ($breadcrumb): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
 
 		<?php if ($page['preface_first'] OR $page['preface'] OR $page['preface_last']): ?>
 			<aside id="preface" class="clearfix" role="complimentary">

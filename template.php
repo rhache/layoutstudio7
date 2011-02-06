@@ -14,6 +14,7 @@ drupal_add_css(drupal_get_path('theme', 'layoutstudio') . '/css/960.css', array(
 drupal_add_js(drupal_get_path('theme', 'layoutstudio') . "/scripts/modernizr-1.6.min.js", 'file');
 
 function layoutstudio_preprocess_html(&$variables) {  
+	
   // Set up layout variable.
   $variables['layout'] = 'no-secondary-and-tertiary';
   if (!empty($variables['page']['secondary_first']) OR !empty($variables['page']['secondary']) OR !empty($variables['page']['secondary_last'])) {
@@ -449,4 +450,26 @@ function layoutstudio_add_meta_head(&$variables) {
     );
   
   drupal_add_html_head($data,'layoutstudio');
+}
+
+/**
+ * Mess with the breadcrumb
+ **/
+
+function layoutstudio_preprocess_breadcrumb(&$vars) {
+	$layoutstudio_enable_breadcrumb = theme_get_setting('layoutstudio_enable_breadcrumb');
+  $layoutstudio_breadcrumb_region = theme_get_setting('layoutstudio_breadcrumb_region');
+  $layoutstudio_breadcrumb_region_placement = theme_get_setting('layoutstudio_breadcrumb_region_placement');
+  
+	if(!$layoutstudio_enable_breadcrumb) {
+		$vars['breadcrumb'] = array();
+		return;
+	}
+
+
+	// This doesnt work. need new idea.
+	drupal_add_region_content($layoutstudio_breadcrumb_region,theme_breadcrumb($vars['breadcrumb']));
+	
+	
+	// kill default breadcrumb
 }
